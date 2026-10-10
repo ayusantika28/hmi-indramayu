@@ -1,0 +1,687 @@
+
+/* =====================================================
+   ADMIN HMI CABANG INDRAMAYU
+   WARNA: HIJAU - PUTIH - HITAM
+===================================================== */
+
+:root {
+    --hmi-green: #006b3c;
+    --hmi-green-dark: #004d2c;
+    --hmi-green-light: #eaf6f0;
+
+    --admin-white: #ffffff;
+    --admin-black: #111827;
+    --admin-text: #1f2937;
+    --admin-muted: #6b7280;
+
+    --admin-background: #f6f8f7;
+    --admin-border: #e5e7eb;
+
+    --admin-danger: #dc3545;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--admin-background);
+    color: var(--admin-text);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.admin-wrapper {
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 260px;
+
+    background: var(--admin-white);
+
+    border-right: 1px solid var(--admin-border);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1050;
+
+    transition: .3s ease;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.admin-brand {
+    height: 80px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    display: flex;
+    align-items: center;
+}
+
+
+.admin-brand-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    text-decoration: none;
+
+    color: var(--admin-black);
+}
+
+
+/* LOGO ADMIN */
+
+.admin-brand img {
+    width: 35px !important;
+    height: 35px !important;
+
+    max-width: 35px !important;
+    max-height: 35px !important;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+
+    flex-shrink: 0;
+}
+
+
+/* BRAND TEXT */
+
+.admin-brand-text {
+    line-height: 1.15;
+}
+
+.admin-brand-text strong {
+    display: block;
+
+    color: var(--hmi-green);
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.admin-brand-text small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--admin-muted);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   SIDEBAR CONTENT
+===================================================== */
+
+.admin-sidebar-content {
+    flex: 1;
+
+    padding: 22px 15px;
+
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   MENU TITLE
+===================================================== */
+
+.admin-menu-title {
+    padding: 0 12px;
+
+    margin: 18px 0 9px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.admin-menu-title:first-child {
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.admin-menu-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 5px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all .2s ease;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+/* ICON */
+
+.admin-menu-item i:first-child {
+    width: 22px;
+
+    min-width: 22px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+
+/* HOVER */
+
+.admin-menu-item:hover {
+    background: var(--hmi-green-light);
+
+    color: var(--hmi-green);
+
+    transform: translateX(2px);
+}
+
+
+/* ACTIVE */
+
+.admin-menu-item.active {
+    background: var(--hmi-green);
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(0, 107, 60, .18);
+}
+
+
+/* ACTIVE HOVER */
+
+.admin-menu-item.active:hover {
+    background: var(--hmi-green-dark);
+
+    color: #ffffff;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.admin-sidebar-bottom {
+    padding: 15px;
+
+    border-top: 1px solid var(--admin-border);
+
+    background: #ffffff;
+}
+
+
+/* USER MINI */
+
+.admin-user-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+}
+
+
+/* AVATAR */
+
+.admin-user-avatar {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--hmi-green-light);
+
+    color: var(--hmi-green);
+
+    font-size: 18px;
+}
+
+
+/* USER TEXT */
+
+.admin-user-text {
+    min-width: 0;
+}
+
+.admin-user-text strong {
+    display: block;
+
+    color: var(--admin-black);
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.admin-user-text small {
+    color: var(--admin-muted);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.admin-logout {
+    color: var(--admin-danger);
+}
+
+.admin-logout:hover {
+    background: #fff1f2;
+
+    color: var(--admin-danger);
+
+    transform: none;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.admin-main {
+    min-height: 100vh;
+
+    margin-left: 260px;
+
+    transition: .3s ease;
+}
+
+
+/* =====================================================
+   NAVBAR ADMIN
+===================================================== */
+
+.admin-navbar {
+    height: 80px;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 900;
+}
+
+
+/* LEFT */
+
+.admin-navbar-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* SIDEBAR TOGGLE */
+
+.admin-sidebar-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: #f3f5f4;
+
+    color: var(--admin-black);
+
+    font-size: 21px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.admin-sidebar-toggle:hover {
+    background: var(--hmi-green-light);
+
+    color: var(--hmi-green);
+}
+
+
+/* PAGE HEADING */
+
+.admin-page-heading h5 {
+    margin: 0;
+
+    color: var(--admin-black);
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.admin-page-heading small {
+    color: var(--admin-muted);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   NAVBAR RIGHT
+===================================================== */
+
+.admin-navbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* LIHAT WEBSITE */
+
+.admin-view-site {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+.admin-view-site:hover {
+    color: var(--hmi-green);
+}
+
+
+/* USER */
+
+.admin-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.admin-content {
+    padding: 30px;
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.admin-alert {
+    border: 0;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, .04);
+}
+
+
+/* =====================================================
+   SCROLLBAR SIDEBAR
+===================================================== */
+
+.admin-sidebar-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.admin-sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.admin-sidebar-content::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+
+    border-radius: 10px;
+}
+
+.admin-sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: var(--hmi-green);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+
+    .admin-wrapper.sidebar-open .admin-sidebar {
+        transform: translateX(0);
+    }
+
+
+    .admin-wrapper.sidebar-open::after {
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0, 0, 0, .35);
+
+        z-index: 1040;
+    }
+
+
+    .admin-navbar {
+        padding: 0 20px;
+    }
+
+
+    .admin-content {
+        padding: 20px;
+    }
+
+
+    .admin-view-site span {
+        display: none;
+    }
+
+
+    .admin-user-text {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .admin-navbar {
+        height: 70px;
+    }
+
+
+    .admin-content {
+        padding: 15px;
+    }
+
+
+    .admin-page-heading {
+        display: none;
+    }
+
+
+    .admin-navbar-right {
+        gap: 10px;
+    }
+
+}
+
+/* =====================================================
+   THUMBNAIL KEGIATAN
+===================================================== */
+
+.admin-kegiatan-thumb {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.admin-kegiatan-placeholder {
+    width: 70px;
+    height: 50px;
+    border-radius: 8px;
+    background: #f1f3f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #adb5bd;
+    font-size: 20px;
+}
