@@ -276,83 +276,44 @@
                                 </td>
 
 
-                                {{-- Actions --}}
-                                <td class="text-end px-4">
 
-                                    <div class="dropdown">
+{{-- Actions --}}
+<td class="text-end px-4">
 
-                                        <button class="btn btn-light btn-sm rounded-circle"
-                                                type="button"
-                                                data-bs-toggle="dropdown">
+    <div class="d-flex justify-content-end gap-2">
 
-                                            <i class="bi bi-three-dots-vertical"></i>
+        {{-- Tombol Lihat --}}
+        <a href="{{ route('admin.berita.show', ['berita' => $berita]) }}"
+           class="btn btn-sm btn-outline-secondary"
+           title="Lihat berita">
 
-                                        </button>
+            <i class="bi bi-eye"></i>
 
+        </a>
 
-                                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+        {{-- Tombol Hapus --}}
+        <form action="{{ route('admin.berita.destroy', ['berita' => $berita]) }}"
+              method="POST"
+              onsubmit="return confirm('Yakin ingin menghapus berita ini?');">
 
-                                            <li>
+            @csrf
 
-                                                <a class="dropdown-item"
-                                                   href="{{ route('admin.berita.show', $berita) }}">
+            @method('DELETE')
 
-                                                    <i class="bi bi-eye me-2"></i>
+            <button type="submit"
+                    class="btn btn-sm btn-outline-danger"
+                    title="Hapus berita">
 
-                                                    Lihat
+                <i class="bi bi-trash"></i>
 
-                                                </a>
+            </button>
 
-                                            </li>
+        </form>
 
+    </div>
 
-                                            <li>
+</td>
 
-                                                <a class="dropdown-item"
-                                                   href="{{ route('admin.berita.edit', $berita) }}">
-
-                                                    <i class="bi bi-pencil me-2"></i>
-
-                                                    Edit
-
-                                                </a>
-
-                                            </li>
-
-
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-
-
-                                            <li>
-
-                                                <form action="{{ route('admin.berita.destroy', $berita) }}"
-                                                      method="POST"
-                                                      onsubmit="return confirm('Yakin ingin menghapus berita ini?')">
-
-                                                    @csrf
-
-                                                    @method('DELETE')
-
-                                                    <button type="submit"
-                                                            class="dropdown-item text-danger">
-
-                                                        <i class="bi bi-trash me-2"></i>
-
-                                                        Hapus
-
-                                                    </button>
-
-                                                </form>
-
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </td>
 
                             </tr>
 
